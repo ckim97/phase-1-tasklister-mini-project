@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   let form = document.querySelector("form");
-  form.addEventListener("click", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const task = document.getElementById("new-task-description").value.trim();
+    const task = e.target["new-task-description"].value.trim();
 
     if(task) {
       createTask(task);
